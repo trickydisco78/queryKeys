@@ -1,0 +1,61 @@
+{
+  "name": "pet-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tanstack/query-sync-storage-persister": "4.20.4",
+    "@tanstack/react-query": "4.20.4",
+    "@tanstack/react-query-persist-client": "4.20.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
+    "axios": "^0.26.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "26.6.0",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-query-swagger": "15.2.5",
+    "react-scripts": "5.0.1",
+    "replace": "1.1.5",
+    "typescript": "^4.9.4",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "generate-axios": "react-query-swagger /tanstack /input:https://petstore.swagger.io/v2/swagger.json /output:src/api/axios-client.ts /template:Axios /serviceHost:. /use-recommended-configuration",
+    "generate-axios-date-only-test": "react-query-swagger /tanstack /input:https://localhost:5001/swagger/v1/swagger.json /output:app/api/api-client.ts /template:Axios /serviceHost:. /use-recommended-configuration",
+    "generate-fetch": "react-query-swagger /tanstack /input:https://petstore.swagger.io/v2/swagger.json /output:src/api/fetch-client.ts /template:Fetch /serviceHost:. /generateConstructorInterface:true /markOptionalProperties:true /generateOptionalParameters:true /nullValue:undefined",
+    "generate-no-hooks-no-modules": "react-query-swagger /no-hooks /input:https://petstore.swagger.io/v2/swagger.json /output:src/api/no-hooks-no-modules.ts /template:Fetch /serviceHost:. /generateConstructorInterface:true /markOptionalProperties:true /generateOptionalParameters:true /nullValue:undefined",
+    "generate-no-hooks": "react-query-swagger /no-hooks /input:https://petstore.swagger.io/v2/swagger.json /output:src/api/no-hooks-client.ts /template:Fetch /serviceHost:. /use-recommended-configuration",
+    "generate-no-hooks-axios": "react-query-swagger /no-hooks /input:https://petstore.swagger.io/v2/swagger.json /output:src/api/no-hooks-client-axios.ts /template:Axios /serviceHost:. /use-recommended-configuration",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
